@@ -1,3 +1,6 @@
+title: Welcome to the Monkey House
+description: All are welcome
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/AllVotingIsLocal/AllVotingIsLocal.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
