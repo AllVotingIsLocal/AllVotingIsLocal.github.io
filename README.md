@@ -11,22 +11,53 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```{r, out.width = '100%', fig.height = 8}
+tmap_mode("view")
+tm_shape(fl.data.map) + 
+  tm_polygons("per.latin.america", title = "% Born in Latin America",
+                                    palette = "Purples",
+                                    alpha = 0.2,
+                                    border.col = "grey30",
+                                    border.alpha = 0.1,
+                                    style = "jenks",
+                                    id = "NAME.y",
+                                    popup.vars = c("% Born in Latin America" = "per.latin.america",
+                                                   "# Born in Latin American" = "latin.america",
+                                                   "% Spanish Speakers" = "per.spanish",
+                                                   "# Spanish Speakers" = "spanish",
+                                                   "# US Citizens" = "total.cit"
+                                                   )) +
+tm_shape(ven) + 
+  tm_polygons("per.venezuela", title = "% Born in Venezuela",
+                                    palette = "Oranges",
+                                    alpha = 0.2,
+                                    border.col = "grey30",
+                                    border.alpha = 0.1,
+                                    style = "jenks",
+                                    id = "NAME.y",
+                                    popup.vars = c("% Born in Venezuela" = "per.venezuela",
+                                    "% Born in Latin America" = "per.latin.america",
+                                                   "# Born in Latin American" = "latin.america",
+                                                   "% Spanish Speakers" = "per.spanish",
+                                                   "# Spanish Speakers" = "spanish",
+                                                   "# US Citizens" = "total.cit"
+                                                   ))+
+tm_shape(haiti) +   
+  tm_polygons("per.haiti", title = "% Born in Haiti",
+                                    palette = "Greens",
+                                    alpha = 0.2,
+                                    border.col = "grey30",
+                                    border.alpha = 0.1,
+                                    style = "jenks",
+                                    id = "NAME.y",
+                                    popup.vars = c("% Born in Haiti" = "per.haiti",
+                                                   "# Born in Haiti" = "haiti",
+                                                   "% Spanish Speakers" = "per.spanish",
+                                                   "# Spanish Speakers" = "spanish",
+                                                   "# US Citizens" = "total.cit"
+                                                   )) +
+  tm_shape(counties) + tm_borders()+
+  tm_shape(Section203) + tm_polygons("red", alpha = 0.2)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
