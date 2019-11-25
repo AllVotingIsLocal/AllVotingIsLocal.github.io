@@ -11,7 +11,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```{r, out.width = '100%', fig.height = 8}
+```markdown
+{r, out.width = '100%', fig.height = 8}
 tmap_mode("view")
 tm_shape(fl.data.map) + 
   tm_polygons("per.latin.america", title = "% Born in Latin America",
